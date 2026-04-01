@@ -122,6 +122,8 @@ const dobles = numeros.map(n => n*2);
 console.log(dobles);
 ```
 
+---
+
 ### 2.3 Creación de componentes
 🔸 Componente no visual (Calculadora)
 ```python
@@ -191,6 +193,8 @@ public class Ventana {
     }
 }
 ```
+---
+
 ### 2.4 Creación de librerías propias
 ### Estructura
 mi_libreria/
@@ -256,6 +260,64 @@ public class Main {
     }
 }
 ```
+
+---
+### trabajo en clase hacer tienda virtual
+
+                    e.control.icon = ft.Icons.FAVORITE_BORDER
+                    e.control.icon_color = None
+                e.control.update()
+
+            def agregar(e):
+                texto_estado.value = f"{producto['nombre']} agregado 🛒"
+                texto_estado.update()
+
+            self.content = ft.Column([
+                ft.Image(src=producto["imagen"]),
+                ft.Text(producto["nombre"]),
+                ft.Text(producto["descripcion"]),
+                ft.Text(f"${producto['precio']}"),
+                ft.Row([
+                    ft.IconButton(icon=ft.Icons.FAVORITE_BORDER, on_click=toggle_fav),
+                    ft.ElevatedButton("Agregar", on_click=agregar)
+                ])
+            ])
+
+    def main(page: ft.Page):
+        texto_estado = ft.Text("")
+        tarjetas = [TarjetaProducto(p, texto_estado) for p in productos]
+
+        page.add(
+            ft.Column([
+                texto_estado,
+                ft.GridView(controls=tarjetas)
+            ])
+        )
+
+    ft.app(target=main, assets_dir="assets")
+
+---
+
+## requirements.txt
+
+flet
+
+---
+## Capturas de Pantalla
+
+### Vista principal
+<img width="942" height="526" alt="image" src="https://github.com/user-attachments/assets/9778d449-0ac9-439e-8085-b9e3be672975" />
+
+
+
+### Producto agregado
+<img width="942" height="525" alt="image" src="https://github.com/user-attachments/assets/925b314a-1ee9-435c-bc2e-e4ac09f4a34a" />
+
+
+### Favoritos
+<img width="942" height="526" alt="image" src="https://github.com/user-attachments/assets/15eb6cc2-e938-4509-94a7-acd90d16eac7" />
+
+---
 ## 🧠 Conclusión
 
 En el desarrollo de esta unidad se logró comprender la importancia de los componentes, las librerías y los paquetes como elementos fundamentales en la construcción de software moderno. Estos conceptos no solo permiten organizar mejor el código, sino que también facilitan la reutilización de funcionalidades, lo que reduce significativamente el tiempo de desarrollo y la probabilidad de errores.
@@ -269,3 +331,9 @@ Asimismo, la creación de componentes propios permite adaptar el software a nece
 En cuanto a la creación de paquetes y librerías definidas por el usuario, se destaca su importancia para organizar proyectos de mayor tamaño. Una buena estructura de carpetas y módulos facilita la navegación dentro del código, permite el trabajo colaborativo y hace que el sistema sea más escalable. Además, el uso de buenas prácticas, como la correcta nomenclatura y documentación, contribuye a la calidad del software.
 
 En conclusión, el uso adecuado de componentes, librerías y paquetes es esencial para el desarrollo de aplicaciones modernas. Estos elementos permiten construir sistemas más ordenados, reutilizables y eficientes, facilitando su mantenimiento y evolución a lo largo del tiempo. Su correcta aplicación no solo mejora la calidad del software, sino que también fortalece las habilidades del desarrollador en la creación de soluciones más profesionales y estructuradas.
+
+## Bibliografías
+Gamma, E. et al. (1994). Design Patterns.
+Sommerville, I. (2016). Ingeniería de software.
+Python Documentation (2023)
+Oracle Java Documentation (2023)
